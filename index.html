@@ -464,6 +464,81 @@ const colorDepth = screen.colorDepth; // 24 = 8-bit, 30 = 10-bit</div>
   </div>
 </section>
 
+<!-- Reference Section -->
+<section style="padding:24px;max-width:1200px;margin:0 auto">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px">
+    <h3 style="font-size:15px;font-weight:600;margin-bottom:16px">CSS Color Level 4 — Function Reference</h3>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border)">
+            <th style="text-align:left;padding:10px;color:var(--text-dim);font-size:11px;text-transform:uppercase">Function</th>
+            <th style="text-align:left;padding:10px;color:var(--text-dim);font-size:11px;text-transform:uppercase">Syntax</th>
+            <th style="text-align:left;padding:10px;color:var(--text-dim);font-size:11px;text-transform:uppercase">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">oklch()</code></td>
+            <td style="padding:10px;color:var(--text-dim)">oklch(L C H / alpha)</td>
+            <td style="padding:10px;color:var(--text-dim)">L: 0-1, C: 0-0.4, H: 0-360. Perceptually uniform. Best for palettes.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">oklab()</code></td>
+            <td style="padding:10px;color:var(--text-dim)">oklab(L a b / alpha)</td>
+            <td style="padding:10px;color:var(--text-dim)">L: 0-1, a/b: -0.4 to 0.4. Cartesian version of OKLCH. Best for mixing.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">color()</code></td>
+            <td style="padding:10px;color:var(--text-dim)">color(space r g b / alpha)</td>
+            <td style="padding:10px;color:var(--text-dim)">Spaces: srgb, srgb-linear, display-p3, a98-rgb, prophoto-rgb, rec2020, xyz-d50, xyz-d65.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">color-mix()</code></td>
+            <td style="padding:10px;color:var(--text-dim)">color-mix(in space, color1 %, color2 %)</td>
+            <td style="padding:10px;color:var(--text-dim)">Mix in any color space. oklch produces best perceptual results. Percentages optional.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">lch()</code></td>
+            <td style="padding:10px;color:var(--text-dim)">lch(L C H / alpha)</td>
+            <td style="padding:10px;color:var(--text-dim)">CIE LCH. L: 0-100, C: 0-150+, H: 0-360. Less perceptually uniform than OKLCH.</td>
+          </tr>
+          <tr>
+            <td style="padding:10px"><code style="color:var(--cyan)">lab()</code></td>
+            <td style="padding:10px;color:var(--text-dim)">lab(L a b / alpha)</td>
+            <td style="padding:10px;color:var(--text-dim)">CIE Lab. L: 0-100, a/b: -125 to 125. Original perceptual space but has hue shifts.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px">
+    <h3 style="font-size:15px;font-weight:600;margin-bottom:16px">Browser Support</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+      <div style="padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);text-align:center">
+        <strong style="color:var(--green);font-size:13px">oklch() / oklab()</strong>
+        <p style="font-size:11px;color:var(--green);margin-top:4px">Baseline 2023</p>
+        <p style="font-size:10px;color:var(--text-dim)">Chrome 111+, Firefox 113+, Safari 15.4+</p>
+      </div>
+      <div style="padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);text-align:center">
+        <strong style="color:var(--green);font-size:13px">color()</strong>
+        <p style="font-size:11px;color:var(--green);margin-top:4px">Baseline 2023</p>
+        <p style="font-size:10px;color:var(--text-dim)">Chrome 111+, Firefox 113+, Safari 15.4+</p>
+      </div>
+      <div style="padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);text-align:center">
+        <strong style="color:var(--green);font-size:13px">color-mix()</strong>
+        <p style="font-size:11px;color:var(--green);margin-top:4px">Baseline 2023</p>
+        <p style="font-size:10px;color:var(--text-dim)">Chrome 111+, Firefox 113+, Safari 16.2+</p>
+      </div>
+      <div style="padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);text-align:center">
+        <strong style="color:var(--green);font-size:13px">Relative color</strong>
+        <p style="font-size:11px;color:var(--green);margin-top:4px">Baseline 2024</p>
+        <p style="font-size:10px;color:var(--text-dim)">Chrome 119+, Firefox 128+, Safari 16.4+</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <a href="https://yurukusa.github.io/dev-toolkit/">Dev Toolkit</a> — CSS Color Level 4 Playground
 </footer>
